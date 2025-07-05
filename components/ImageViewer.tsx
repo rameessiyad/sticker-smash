@@ -1,10 +1,19 @@
-import React from 'react'
-import { Text, View } from 'react-native'
+import { Image } from "expo-image";
+import React from "react";
+import { ImageSourcePropType } from "react-native";
 
-export default function ImageViewer() {
-  return (
-    <View>
-      <Text>ImageViewer</Text>
-    </View>
-  )
+type Props = {
+  imgSource: ImageSourcePropType;
+};
+
+export default function ImageViewer({ imgSource }: Props) {
+  return <Image source={imgSource} style={styles.image} />;
 }
+
+const styles = {
+  image: {
+    width: 328,
+    height: 448,
+    borderRadius: 18,
+  },
+};
